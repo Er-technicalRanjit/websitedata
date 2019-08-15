@@ -1,0 +1,42 @@
+{% extends 'forum.html' %}
+{% block head %}
+    <style>
+    label{
+        margin-top: 5%;
+        margin-left: 3%;
+        margin-right: 3%;
+
+    }
+    </style>
+
+<div class="container bg-transparent pt-5 text-white">
+<form action="" method="post" enctype="multipart/form-data">
+	{%csrf_token%}
+    <center><h1>Edit Your Information</h1></center>
+    <label for="description"><strong>Description :</strong></label>
+    {{ p_form.description }}<br>
+
+    <label for="city"><strong>Your City:</strong></label>
+    {{ p_form.city }}<br>
+    <label for="city"><strong>Website:</strong></label>
+    {{ p_form.website }}<br>
+
+
+    <label for="profile_pic"><strong>Profile_pic:</strong></label>
+    {{ p_form.profile_pic }}<br>
+
+
+    <label for="cover_pic"><strong>Cover_pic</strong></label>
+    {{ p_form.cover_pic }}<br>
+
+    <input type="submit" value="Submit" class="btn btn-success rounded-pill mt-5 ml-5 mb-5">
+
+
+    
+
+
+</form>
+</div>
+
+
+{% endblock %}

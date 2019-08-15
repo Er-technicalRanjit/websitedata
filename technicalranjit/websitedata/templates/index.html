@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+	<title>Home-Technical Ranjit</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+	<script type="text/javascript">
+		function nav_bar(){
+			x=document.getElementById('nav_bar');
+			y=document.getElementById('mob_icon');
+
+
+			if (x.style.display==="none"){
+				x.style.display="inline-grid";
+
+
+
+			}
+			else{
+				x.style.display='none';
+			}
+		}
+
+	</script>
+
+
+</head>
+<body id="bg" style="background-image: url('{% static "images/background.png"%}');">
+
+<header>
+	<nav>
+		
+		<div class="nav-bar-main clearfix">
+			<img src="{%  static 'images/logo.png' %}" class="logo">
+			<ul class="nav-bar animated slideInDown" id="nav_bar">
+				<li><a href="">Home</a></li>
+
+				<li><a href="#">Software</a></li>
+                {% if not user.is_authenticated %}
+				<li><a href="/signin">Login</a></li>
+				<li><a href="/signup">Signup</a></li>
+                    <li><a href="/forum">Forum</a></li>
+
+                {% else %}
+                <li style="font-size:18px; color:white;"><a href="/user/profile" class="text-danger">{{ user.username }}</a></li>
+				<li><a href="/logout">Logout</a></li>
+                    <li><a href="/forum">Forum</a></li>
+
+                {% endif %}
+
+			</ul>
+			<a href="#" class="mobile_icon" id="mob_icon" onclick="nav_bar()"><i class="fa fa-bars"></i></a>
+		</div>
+
+	</nav>
+	
+		<form class="form-inline mt-5 search_form clearfix ">
+		<input type="text" name="search_bar" class="form-control rounded-pill animated rollIn" id="search_input" placeholder="Search This Website"/>
+		<input type="submit" value="search" class="btn btn-primary rounded-pill animated lightSpeedIn" id="search_btn"/>
+	    </form>
+	
+
+
+	<div class="welcome_text animated slideInRight">
+		<h1>Welcome To <span class="color_change">Technical Ranjit</span> Website.<br>You can get all types of technical information as well as their utilities.......</h1>
+
+		<a href="#"><button" class="btn btn-info" id="know_more_btn" value="Know more" >Know More</button"></a>
+	</div>
+</header>
+
+
+
+
+<div class="center-right-widget clearfix">
+	<div class="float-left recent_post" >
+		<h1 style="margin-bottom: 5%;"><center>Recent Post</center></h1>
+
+		<h5 class="mt-5">Description</h5> 
+
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, </p><br>
+
+		<h5 class="mt-5">Description</h5> 
+
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, </p><br>
+
+		<h5 class="mt-5">Description</h5> 
+
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, </p><br>
+	</div>
+
+	<div class="float-right right_side_bar text-white">
+
+		<div style="width: 100%; border-bottom: 1px solid red;">
+
+	<center><h3 style="border-bottom: 3px solid red; width: 50%;" class="color_change bg-white">Social Media</h3></center>
+</div>
+
+	<div class="facebook_area mt-5 mb-3 ml-4">
+
+		<h4 >Like us on:</h4>
+		<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftechnicalranjitofficial&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=296597650816832" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+	</div>
+
+
+	<div class="ml-4 mt-5 mb-5">
+		<h1>Facebook </h1>
+		<p> habitant morbi tristique senectus et netus et<br>
+		 malesuada fames ac turpis <br>
+		egestas. Vestibulum tortor quam, <br>
+	feugiat vitae, ultricies</p>
+
+
+	</div>
+
+
+	<div>
+		<h4 class="mt-5 animated slideInDown">Message from Admin</h4>
+		<center><p> If you have any problem with having this website <br>then you can contact with me by flowing me on <br>facebook or by sending msg with the respective <br>emails or if you have any question or<br>request ,then go to this link and<br> submit your request</p></center>
+
+
+	</div>
+
+
+</div>
+
+</div>
+
+
+<div class="our_service clearfix">
+
+	<div class="mb-5 mt-5 our_service_title" style="margin-bottom: 10%; margin-left: 20%; border-bottom: 3px solid red; width: 50%; "><center><h1>Our Services</h1></center></div>
+
+<div class="float-left first_service">
+<h1>Facebook </h1>
+		<p> habitant morbi tristique senectus et netus et<br>
+		 malesuada fames ac turpis <br>
+		egestas. Vestibulum tortor quam, <br>
+	feugiat vitae, ultricies</p>
+</div>
+<div class="float-left second_service">
+	<h1>Facebook </h1>
+		<p> habitant morbi tristique senectus et netus et<br>
+		 malesuada fames ac turpis <br>
+		egestas. Vestibulum tortor quam, <br>
+	feugiat vitae, ultricies</p>
+</div>
+
+<div class=" float-right third_service" >
+	<h1>Facebook </h1>
+		<p> habitant morbi tristique senectus et netus et<br>
+		 malesuada fames ac turpis <br>
+		egestas. Vestibulum tortor quam, <br>
+	feugiat vitae, ultricies</p>
+
+</div>
+
+</div>
+
+
+	<div class="youtube_content text-white">
+
+		<div class="mt-5 mb-5 bg-white color_change" style="width:50%; margin-left: 25%;"><center><h1>CHECK OUT YOUTUBE VIDEOS</h1></center></div>
+
+		<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-98f246b8-e3fe-4bc5-b9aa-3f6924f32894"></div>
+
+		
+	</div>
+
+
+
+
+<a href="profile/{{ user.username }}">Button</a>
+
+</body>
+</html>

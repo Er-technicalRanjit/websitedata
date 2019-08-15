@@ -1,0 +1,49 @@
+{% extends 'forum.html' %}
+
+{% block head %}
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3"></script>
+
+<style>
+h1{
+    text-align: center;
+
+}
+</style>
+
+<div class="container bg-white mt-5">
+
+<h1 style="text-align: center;">Details for {{ posts.title }}</h1>
+
+
+<div class="bg-dark mt-5 text-white">
+
+ <h1 style="margin-bottom: 15%;"><a href="/forum/{{ posts.id }}" class="text-danger">{{ posts.title }}</a>
+     <small style="font-size: 10px;"><p class="mt-2">created on:{{posts.upload_date }}<p><p1>Upload by:<a href="/profile/{{ posts.user.username }}"> {{ posts.user}}</a></small></h1>
+    <center><div class="fb-like" data-href="http://127.0.0.1:8000/forum/{{ posts.id }}" data-width="" data-layout="standard" data-action="like" data-size="large" data-colorscheme="dark" data-show-faces="true" data-share="true"></div></center>
+
+{%if posts.images%}
+    <center><img src="{{ posts.images.url }}" style="border-radius: 10px; width:70%;" class="mt-5"><br></center>
+    {%endif%}
+
+    <h5 style="margin-top: 5%; margin-left: 3%;">Description: {{ posts.description }}</h5><br>
+
+    <center><div class="fb-like" data-href="http://127.0.0.1:8000/forum/{{ posts.id }}" data-width="" data-layout="standard" data-action="like" data-size="large" data-colorscheme="dark" data-show-faces="true" data-share="true"></div></center>
+
+
+ <div class="text-white"><div class="fb-comments" data-href="http://127.0.0.1:8000/forum/{{ posts.id }}" data-width="100px" data-numposts="100" data-colorscheme="dark"></div>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
